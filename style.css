@@ -1,0 +1,152 @@
+/* colors:
+pink color: #FF008D;
+blue color: #00AAED;
+yellow color: #F9F729;
+green color: #00A90D; */
+
+body, html {
+  height: 100%;
+  font-family: CMSansSerif-Medium;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0
+}
+
+.parallax {
+  font-size: 22vh;
+  height: 100%;
+  position: fixed;
+  margin-left: 32.5vw;
+  margin-top: 35vh;
+  z-index: 1;
+}
+
+.display-none {
+  display: none;
+}
+
+.fade-in {
+  animation: fade-in 1s
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* search bar  */
+
+input[type=search]:focus {
+  border: none;
+  outline: 0 none;
+}
+
+.mar-right {
+  margin-right: 10vw !important;
+}
+
+.z-index {
+  z-index: 1;
+}
+
+/* logo */
+
+.logo-container {
+  position: fixed;
+  transform: rotate(270deg);
+  bottom: 5px;
+  left: 5px;
+  padding: 5px;
+}
+
+.letter {
+  font-size: 2vw;
+  position: fixed;
+  margin-top: 30vh;
+  mix-blend-mode: multiply;
+  font-weight: bold;
+}
+
+.yellow {
+  color: rgb(249, 247, 41);
+}
+
+.blue {
+  color: rgb(0, 170, 237);
+}
+
+.pink {
+  color: rgb(255, 0, 141);
+}
+
+.y-controller {
+  animation: y-controller 1100ms infinite
+}
+
+.p-controller {
+  animation: p-controller 1100ms infinite
+}
+
+@keyframes y-controller {
+  0% {
+    left: -10px
+  }
+  5% {
+    left: -4px
+  }
+  10% {
+    left: -2px
+  }
+  30% {
+    left: 2px
+  }
+  50% {
+    left: 1px
+  }
+  80% {
+    left: 2px
+  }
+  90% {
+    left: -2px
+  }
+  95% {
+    left: -4px
+  }
+  100% {
+    left: -4px
+  }
+}
+
+@keyframes p-controller {
+  0% {
+    left: 34px
+  }
+  5% {
+    left: 16px
+  }
+  10% {
+    left: 12px
+  }
+  30% {
+    left: 8px
+  }
+  50% {
+    left: 5px
+  }
+  80% {
+    left: 8px
+  }
+  90% {
+    left: 13px
+  }
+  95% {
+    left: 16px
+  }
+  100% {
+    left: 16px
+  }
+}
