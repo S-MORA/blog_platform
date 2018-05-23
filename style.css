@@ -150,3 +150,25 @@ input[type=search]:focus {
     left: 16px
   }
 }
+
+/* carousel */
+
+.position-left {
+  position: relative;
+  left: 46vw;
+}
+
+.hero-text-container {
+  height: 20vw;
+  width: 40vw;
+}
+
+.hero-text {
+  font-family: CMSansSerif-Medium;
+  font-size: 40px;
+  color: #000000;
+  letter-spacing: 1px;
+  position: relative;
+  bottom: 35vh;
+  left: 28vw;
+}
