@@ -20,3 +20,10 @@ $(document).ready(function() {
   })
 
 });
+
+//masonry
+$('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: 54,
+  percentPosition: true
+});

@@ -1,0 +1,35 @@
+<form action="/create" method="POST" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col">
+      <label for="">Title</label>
+      <input type="text" name="title" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="">Content</label>
+      <textarea cols="30" rows="10" name="content" class="form-control"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <input type="radio" name="tag" value="science">science<br>
+      <input type="radio" name="tag" value="music">music<br>
+      <input type="radio" name="tag" value="viral">viral
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <input type="file" name="file">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </div>
+</form>
