@@ -67,7 +67,8 @@
             <%end%>
                  <img src="<%=post.img%>" alt=""><br>
               </div>
-            </a>
+           </a>
+
               <%t = post.updated_at%>
                 <%m = t.strftime("%m")%>
                   <%d = t.strftime("%d")%>
@@ -77,8 +78,8 @@
                       <%= author.l_name.downcase%></span><br>
                     <span class="md-black"><%=post.title%></span>
                   </div>
-
-              </div>
-                <% end %>
+            
+              <% end %>
             </div>
+
   <div class="parallax fade-in display-none">Latest</div>

@@ -108,11 +108,62 @@ get ('/post/:id') do
 end
 
 get ('/edit/:id') do
+  user_id = session[:user_id]
+  if user_id.nil?
+    return redirect '/'
+  end
+
     @id = params[:id].to_i
     @post = Post.find(@id)
     erb(:edit)
 end
 
+post ('/edit/post/:id') do
+  user_id = session[:user_id]
+  if user_id.nil?
+    return redirect '/'
+  end
+
+  @filename = params[:file][:filename]
+  file = params[:file][:tempfile]
+
+  File.open("./public/images/#{@filename}", 'wb') do |f|
+    f.write(file.read)
+  end
+
+  @id = params[:id].to_i
+  @post = Post.find(@id)
+  @post.update(
+    title: params[:title],
+    content: params[:content],
+    user_id: user_id,
+    tag: params[:tag],
+    img: "images/#{@filename}",
+    updated_at: Time.now
+  )
+  redirect '/dashboard'
+end
+
+get ('/delete/:id') do
+  user_id = session[:user_id]
+  if user_id.nil?
+    return redirect '/'
+  end
+  @id = params[:id].to_i
+  @post = Post.find(@id)
+  erb(:delete)
+end
+
+get ('/delete/final/:id') do
+  user_id = session[:user_id]
+  if user_id.nil?
+    return redirect '/'
+  end
+  @id = params[:id].to_i
+  @post = Post.find(@id)
+  @post.destroy
+  redirect '/dashboard'
+end
 
 get ('/music') do
   music_posts = Post.where(tag:'music')

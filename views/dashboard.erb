@@ -17,7 +17,7 @@
     <div class="contain-edit">
           <img src="<%=post.img%>" alt="">
           <div class="edit"><a href="/edit/<%=post.id%>"><i class="fa fa-pencil fa-lg"></i></a></div>
-          <div class="trash"><a href="/delete"><i class="fa fa-trash fa-lg"></i></a></div>
+          <div class="trash"><a href="/delete/<%=post.id%>"><i class="fa fa-trash fa-lg"></i></a></div>
     </div>
           <%t = post.updated_at%>
             <%m = t.strftime("%m")%>
