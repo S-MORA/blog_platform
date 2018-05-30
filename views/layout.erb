@@ -15,14 +15,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
 
   <nav class="bg-white navbar navbar-expand-lg sticky-top border-bottom">
-    <a class="navbar-brand" href="/"><img src="images/logo.png"></a>
+    <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,13 +30,13 @@
 
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link pink" href="#">science</a>
+          <a class="nav-link pink" href="/science">science</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link blue" href="#">music</a>
+          <a class="nav-link blue" href="/music">music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link yellow" href="#">viral
+          <a class="nav-link yellow" href="/viral">viral
             </a>
         </li>
 
@@ -48,7 +48,11 @@
         <% end %>
         </li>
         <li class="nav-item">
+        <% if  @user == nil %>
           <a style="color:black" class="nav-link" href="/signup">sign up</a>
+          <% else %>
+          <a style="color:black" class="nav-link" href="/dashboard">dashboard</a>
+          <% end %>
         </li>
       </ul>
       <div class="icon-container ml-auto mr-4">

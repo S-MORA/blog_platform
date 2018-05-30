@@ -1,11 +1,12 @@
 require 'sinatra'
 require './models'
+require './View_manager'
 
 set :session_secret, ENV['BLOG_SECRET_SESSION']
 enable :sessions
 
 get ('/') do
-  @posts = Post.all 
+  @posts = Post.all
   erb(:index)
 end
 
@@ -99,4 +100,28 @@ post ('/create') do
   )
 
   redirect '/dashboard'
+end
+
+get ('/post/:id') do
+  @id = params[:id].to_i
+  @post = Post.find(@id)
+  erb(:post)
+end
+
+get ('/music') do
+  music_posts = Post.where(tag:'music')
+  @view_manager = ViewManager.new('music', music_posts)
+  erb(:tagged_posts)
+end
+
+get ('/science') do
+  science_posts = Post.where(tag:'science')
+  @view_manager = ViewManager.new('science', science_posts)
+  erb(:tagged_posts)
+end
+
+get ('/viral') do
+  viral_posts = Post.where(tag:'viral')
+  @view_manager = ViewManager.new('viral', viral_posts)
+  erb(:tagged_posts)
 end

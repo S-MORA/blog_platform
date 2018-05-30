@@ -296,3 +296,23 @@ img {
 .contain-overlay:hover .image {
   opacity: 0.3;
 }
+
+/* edit on hover in dashboard.erb  */
+
+.contain-edit:hover .edit {
+  display: block;
+}
+
+.edit {
+  padding-top: 7px;
+  padding-right: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.edit a {
+  color: #000;
+}

@@ -57,6 +57,7 @@
               <div class="grid-item grid-item--width3">
             <%end%>
 
+          <a href="/post/<%=post.id.to_i%>">
             <% if post.tag == 'science' %>
               <div class="contain-overlay overlay pink">
             <% elsif post.tag == 'music' %>
@@ -64,9 +65,9 @@
             <% else %>
                <div class="contain-overlay overlay yellow">
             <%end%>
-
-            <a href="post"><img src="<%=post.img%>" alt=""></a><br>
-            </div>
+                 <img src="<%=post.img%>" alt=""><br>
+              </div>
+            </a>
               <%t = post.updated_at%>
                 <%m = t.strftime("%m")%>
                   <%d = t.strftime("%d")%>
@@ -76,8 +77,8 @@
                       <%= author.l_name.downcase%></span><br>
                     <span class="md-black"><%=post.title%></span>
                   </div>
-                <% end %>
-              </div>
 
+              </div>
+                <% end %>
             </div>
   <div class="parallax fade-in display-none">Latest</div>
