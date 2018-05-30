@@ -1,32 +1,43 @@
-<h1>Hello,
-  <%=@user.f_name%>. Here are your posts
+<h1 class="mt-5">Hello, Here are your posts
 </h1>
 <h2>
   <a href="/create">Create a Post</a>
 </h2>
 
-<div class="grid">
+<div class="parallax fade-in display-none"><%=@user.f_name.downcase%></div>
 
-  <div>
-    <div class="grid-item">
-      <a href="post"><img src="<%=@user.posts[0].img%>" alt=""></a><br>
-      <%t = @user.posts[0].updated_at%>
-      <%m = t.strftime("%m")%>
-      <%d = t.strftime("%d")%>
-      <span class="sm-gray"><%=m%>.<%=d%> <%= @user.posts[0].tag%> <%= @user.f_name.downcase%> <%= @user.l_name.downcase%></span><br>
-      <span class="md-black"><%=@user.posts[0].title%></span>
-    </div>
-  </div>
+<div class="grid-dash">
+  <% @user.posts.reverse_each do |post| %>
+    <% if post.id.to_i % 2 == 0 %>
+      <div>
+        <div class="grid-item-dash">
+          <a href="post"><img src="<%=post.img%>" alt=""></a><br>
+          <%t = post.updated_at%>
+            <%m = t.strftime("%m")%>
+              <%d = t.strftime("%d")%>
+                <span class="sm-gray"><%=m%>.<%=d%>
+                  <%= post.tag%>
+                  <%= @user.f_name.downcase%>
+                  <%= @user.l_name.downcase%></span><br>
+                <span class="md-black"><%=post.title%></span>
+              </div>
+            </div>
+          <% else %>
+            <div>
+              <div class="grid-item-dash grid-item-dash-width2">
+                <a href="post"><img src="<%=post.img%>" alt=""></a><br>
+                <%t = post.updated_at%>
+                  <%m = t.strftime("%m")%>
+                    <%d = t.strftime("%d")%>
+                      <span class="sm-gray"><%=m%>.<%=d%>
+                        <%= post.tag%>
+                        <%= @user.f_name.downcase%>
+                        <%= @user.l_name.downcase%></span><br>
+                      <span class="md-black"><%=post.title%></span>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
 
-
-    <div>
-      <div class="grid-item">
-        <a href="post"><img src="<%=@user.posts[1].img%>" alt=""></a><br>
-        <%t = @user.posts[1].updated_at%>
-        <%m = t.strftime("%m")%>
-        <%d = t.strftime("%d")%>
-        <span class="sm-gray"><%=m%>.<%=d%> <%= @user.posts[1].tag%> <%= @user.f_name.downcase%> <%= @user.l_name.downcase%></span><br>
-        <span class="md-black"><%=@user.posts[1].title%></span>
-      </div>
-    </div>
-</div>
+<div class="parallax fade-in display-none"><%=@user.f_name.downcase%></div>

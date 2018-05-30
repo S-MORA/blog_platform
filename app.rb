@@ -5,6 +5,7 @@ set :session_secret, ENV['BLOG_SECRET_SESSION']
 enable :sessions
 
 get ('/') do
+  @posts = Post.all 
   erb(:index)
 end
 

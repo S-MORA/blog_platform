@@ -191,19 +191,36 @@ img {
   max-width: 100vw;
 }
 
+.grid-dash {
+  max-width: 100vw;
+}
+
+.grid-dash:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .grid:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.grid-sizer, .grid-item {
+.grid-item {
   width: 35%;
   margin: .5px;
+  float: left;
 }
 
-.grid-item {
+.grid-item-dash {
+  width: 45%;
+  margin: 1px;
   float: left;
+}
+
+.grid-item-dash-width2 {
+  width: 22%;
 }
 
 /* 2 columns */

@@ -27,3 +27,9 @@ $('.grid').masonry({
   columnWidth: 54,
   percentPosition: true
 });
+
+$('.grid-dash').masonry({
+  itemSelector: '.grid-item-dash',
+  columnWidth: 180,
+  percentPosition: true
+});
