@@ -299,20 +299,41 @@ img {
 
 /* edit on hover in dashboard.erb  */
 
+.contain-edit {
+  position: relative;
+  display: inline-block;
+}
+
 .contain-edit:hover .edit {
   display: block;
 }
 
 .edit {
   padding-top: 7px;
+  padding-right: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+.edit a {
+  color: #000;
+}
+
+.trash {
+  padding-top: 7px;
   padding-right: 7px;
   position: absolute;
   right: 0;
   top: 0;
   display: none;
-  z-index: 1000;
 }
 
-.edit a {
+.trash a {
   color: #000;
+}
+
+.contain-edit:hover .trash {
+  display: block;
 }

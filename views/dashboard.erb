@@ -13,21 +13,12 @@
     <% else %>
       <div class="grid-item-dash grid-item-dash-width2">
     <% end %>
-  <a href="/post">
-    <!-- <% if post.tag == 'science' %>
-      <div class="contain-overlay overlay pink">
-    <% elsif post.tag == 'music' %>
-       <div class="contain-overlay overlay blue">
-    <% else %>
-       <div class="contain-overlay overlay yellow">
-    <%end%> -->
-        <div class="contain-edit">
-          <img src="<%=post.img%>" alt=""><br>
-          <div class="edit"><a href="#"><i class="fa fa-pencil fa-lg"></i></a></div>
-        </div>
 
-      <!-- </div> -->
-      </a>
+    <div class="contain-edit">
+          <img src="<%=post.img%>" alt="">
+          <div class="edit"><a href="/edit/<%=post.id%>"><i class="fa fa-pencil fa-lg"></i></a></div>
+          <div class="trash"><a href="/delete"><i class="fa fa-trash fa-lg"></i></a></div>
+    </div>
           <%t = post.updated_at%>
             <%m = t.strftime("%m")%>
               <%d = t.strftime("%d")%>
@@ -37,7 +28,7 @@
                   <%= @user.l_name.downcase%></span><br>
                 <span class="md-black"><%=post.title%></span>
               </div>
-    <% end %>
+  <% end %>
      </div>
 
 <div class="parallax fade-in display-none"><%=@user.f_name.downcase%></div>

@@ -11,7 +11,6 @@ get ('/') do
 end
 
 get ('/signup') do
-
   erb(:signup)
 end
 
@@ -107,6 +106,13 @@ get ('/post/:id') do
   @post = Post.find(@id)
   erb(:post)
 end
+
+get ('/edit/:id') do
+    @id = params[:id].to_i
+    @post = Post.find(@id)
+    erb(:edit)
+end
+
 
 get ('/music') do
   music_posts = Post.where(tag:'music')
