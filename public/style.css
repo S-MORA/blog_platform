@@ -297,7 +297,7 @@ img {
   opacity: 0.3;
 }
 
-/* edit on hover in dashboard.erb  */
+/* edit & delete on hover in dashboard.erb  */
 
 .contain-edit {
   position: relative;
@@ -336,4 +336,13 @@ img {
 
 .contain-edit:hover .trash {
   display: block;
+}
+
+/* footer */
+
+footer {
+  background: #F1F1F1;
+  border: 1px solid #979797;
+  width: 100%;
+  height: 10vh;
 }
