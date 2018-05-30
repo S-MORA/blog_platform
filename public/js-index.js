@@ -30,6 +30,6 @@ $('.grid').masonry({
 
 $('.grid-dash').masonry({
   itemSelector: '.grid-item-dash',
-  columnWidth: 180,
+  columnWidth: 250,
   percentPosition: true
 });

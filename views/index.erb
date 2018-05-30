@@ -44,74 +44,40 @@
 
 <div class="parallax fade-in display-none">Latest</div>
 
-
 <!-- main content  -->
 
 <div class="grid">
-<% @posts.reverse_each do |post| %>
- <% author = User.find_by(id: post.user_id)%>
-  <% if post.id.to_i % 3 == 0 %>
-  <div class="grid-item">
-    <a href="post"><img src="<%=post.img%>" alt=""></a><br>
-    <%t = post.updated_at%>
-      <%m = t.strftime("%m")%>
-        <%d = t.strftime("%d")%>
-          <span class="sm-gray"><%=m%>.<%=d%>
-            <%= post.tag%>
-            <%= author.f_name.downcase%>
-            <%= author.l_name.downcase%></span><br>
-          <span class="md-black"><%=post.title%></span>
-        </div>
-        <% elsif post.id.to_i % 2 == 0 %>
-        <div>
-          <div class="grid-item grid-item--width2">
+  <% @posts.reverse_each do |post| %>
+    <% author = post.user %>
+      <% if post.id.to_i % 3 == 0 %>
+        <div class="grid-item">
+          <% elsif post.id.to_i % 2 == 0 %>
+             <div class="grid-item grid-item--width2">
+            <% else %>
+              <div class="grid-item grid-item--width3">
+            <%end%>
+
+            <% if post.tag == 'science' %>
+              <div class="contain-overlay overlay pink">
+            <% elsif post.tag == 'music' %>
+               <div class="contain-overlay overlay blue">
+            <% else %>
+               <div class="contain-overlay overlay yellow">
+            <%end%>
+
             <a href="post"><img src="<%=post.img%>" alt=""></a><br>
-            <%t = post.updated_at%>
-              <%m = t.strftime("%m")%>
-                <%d = t.strftime("%d")%>
-                  <span class="sm-gray"><%=m%>.<%=d%>
-                    <%= post.tag%>
-                    <%= author.f_name.downcase%>
-                    <%= author.l_name.downcase%></span><br>
-                  <span class="md-black"><%=post.title%></span>
-                </div>
+            </div>
+              <%t = post.updated_at%>
+                <%m = t.strftime("%m")%>
+                  <%d = t.strftime("%d")%>
+                    <span class="sm-gray"><%=m%>.<%=d%>
+                      <%= post.tag%>
+                      <%= author.f_name.downcase%>
+                      <%= author.l_name.downcase%></span><br>
+                    <span class="md-black"><%=post.title%></span>
+                  </div>
+                <% end %>
               </div>
-              <% else %>
-              <div>
-                <div class="grid-item grid-item--width3">
-                  <a href="post"><img src="<%=post.img%>" alt=""></a><br>
-                  <%t = post.updated_at%>
-                    <%m = t.strftime("%m")%>
-                      <%d = t.strftime("%d")%>
-                        <span class="sm-gray"><%=m%>.<%=d%>
-                          <%= post.tag%>
-                          <%= author.f_name.downcase%>
-                          <%= author.l_name.downcase%></span><br>
-                        <span class="md-black"><%=post.title%></span>
-                      </div>
-                    </div>
-            <% end %>
-          <% end %>
-      </div>
 
-
-  <div class="grid-item"><img src="images/article-1.png" alt=""></div>
-  <div class="grid-item grid-item--width2 "><img src="images/article-2.png" alt=""></div>
-  <div class="grid-item grid-item--width3 "><img src="images/article-3.png" alt=""></div>
-
-  <div class="grid-item"><img src="images/article-4.png" alt=""></div>
-  <div class="grid-item grid-item--width2 "><img src="images/article-1.png" alt=""></div>
-  <div class="grid-item grid-item--width3 "><img src="images/article-2.png" alt=""></div>
-
-  <div class="grid-item"><img src="images/article-3.png" alt=""></div>
-  <div class="grid-item grid-item--width2 "><img src="images/article-3.png" alt=""></div>
-  <div class="grid-item grid-item--width3 "><img src="images/article-1.png" alt=""></div>
-
-  <div class="grid-item"><img src="images/article-2.png" alt=""></div>
-  <div class="grid-item grid-item--width2 "><img src="images/article-2.png" alt=""></div>
-  <div class="grid-item grid-item--width3"><img src="images/article-4.png" alt=""></div>
-
-</div>
-
-
+            </div>
   <div class="parallax fade-in display-none">Latest</div>
