@@ -198,6 +198,10 @@ img {
   max-width: 100%;
 }
 
+.left {
+  left: 8vw;
+}
+
 .grid:after {
   content: '';
   display: block;
@@ -206,7 +210,6 @@ img {
 
 .grid-item {
   width: 35%;
-  margin: 1vw;
   float: left;
 }
 
@@ -221,9 +224,8 @@ img {
 }
 
 .grid-item-dash {
-  width: 30%;
+  width: 39%;
   float: left;
-  margin: 1%
 }
 
 .grid-posts {
@@ -237,18 +239,19 @@ img {
 }
 
 .grid-item-post {
-  width: 30%;
+  width: 40.5%;
+  float: left;
 }
 
 /* 2 columns */
 
-.grid-item-post-width2 {
+/* .grid-item-post-width2 {
   width: 45%
-}
+} */
 
-.grid-item-dash-width2 {
+/* .grid-item-dash-width2 {
   width: 30%;
-}
+} */
 
 .grid-item--width2 {
   width: 22%;

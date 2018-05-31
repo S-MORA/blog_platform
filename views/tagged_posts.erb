@@ -5,14 +5,15 @@
  <% else %>
  <div class="parallax margin-top fade-in display-none yellow"><%=@view_manager.type%></div>
  <% end %>
-<div class="container">
-  <div class="mt-5">
+<div class="container-fluid">
+  <div class="my-5">
+
     <div class="grid-posts">
       <% @view_manager.posts.reverse_each do |post| %>
-        <% if post.id.to_i % 2 == 0 %>
-          <div class="grid-item-post">
+        <% if post.id.to_i % 2 != 1 %>
+          <div class="grid-item-post m-3 ml-5">
         <% else %>
-          <div class="grid-item-post grid-item-post-width2">
+          <div class="grid-item-post m-3">
         <% end %>
       <a href="post/<%=post.id%>">
         <% if post.tag == 'science' %>

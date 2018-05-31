@@ -61,7 +61,7 @@
 <div class="parallax fade-in display-none">Latest</div>
 <!-- main content  -->
 
-<div class="grid">
+<div class="grid left">
   <% @newest_posts.each do |post| %>
     <% author = post.user %>
       <% if post.id.to_i % 3 == 0 %>

@@ -30,12 +30,12 @@ $('.grid').masonry({
 
 $('.grid-dash').masonry({
   itemSelector: '.grid-item-dash',
-  columnWidth: 210,
+  columnWidth: 120,
   percentPosition: true
 });
 
 $('.grid-posts').masonry({
   itemSelector: '.grid-item-post',
-  columnWidth: 276,
+  columnWidth: 100,
   percentPosition: true
 });
