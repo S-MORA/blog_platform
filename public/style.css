@@ -191,7 +191,6 @@ img {
   max-height: 100%;
   opacity: 1;
   transition: .5s ease;
-  backface-visibility: hidden;
 }
 
 .grid {
@@ -279,15 +278,8 @@ img {
 
 /* overlay effect */
 
-.contain-overlay {
+/* .contain-overlay {
   position: relative;
-}
-
-/* .image {
-  opacity: 1;
-  display: block;
-  transition: .5s ease;
-  backface-visibility: hidden;
 } */
 
 .overlay {

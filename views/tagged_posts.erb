@@ -17,13 +17,16 @@
         <% end %>
       <a href="post/<%=post.id%>">
         <% if post.tag == 'science' %>
-          <div class="contain-overlay overlay pink">
+          <div class="overlay pink">
         <% elsif post.tag == 'music' %>
-           <div class="contain-overlay overlay blue">
+           <div class="overlay blue">
         <% else %>
-           <div class="contain-overlay overlay yellow">
+           <div class="overlay yellow">
         <%end%>
-              <img src="<%=post.img%>" alt=""><br>
+
+          <img src="<%=post.img%>" alt=""><br>
+
+
           </div>
           </a>
               <%t = post.updated_at%>
