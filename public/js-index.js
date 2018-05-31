@@ -24,7 +24,7 @@ $(document).ready(function() {
 //masonry
 $('.grid').masonry({
   itemSelector: '.grid-item',
-  columnWidth: 54,
+  columnWidth: 80,
   percentPosition: true
 });
 
