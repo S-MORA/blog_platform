@@ -4,7 +4,7 @@ $(document).ready(function() {
   let parralax = $(".parallax");
   $(window).scroll(function() {
     let scroll = $(window).scrollTop();
-    if (scroll >= 300) {
+    if (scroll >= 180) {
       parralax.removeClass('display-none')
       console.log("Removed")
     } else {
@@ -24,7 +24,7 @@ $(document).ready(function() {
 //masonry
 $('.grid').masonry({
   itemSelector: '.grid-item',
-  columnWidth: 80,
+  columnWidth: 60,
   percentPosition: true
 });
 

@@ -65,12 +65,11 @@
   <div class="grid">
     <% @newest_posts.each do |post| %>
       <% author = post.user %>
-        <% if post.id.to_i % 2 != 1 %>
-          <div class="grid-item m-3 ml-5">
-            <% elsif post.id.to_i % 2 == 0 %>
-               <div class="grid-item grid-item--width2 m-3">
-              <% else %>
-                <div class="grid-item m-3">
+        <% if post.id.to_i.even?  %>
+          <div class="grid-item m-2 ml-5">
+            <% else %>
+               <div class="grid-item grid-item--width2 m-2">
+
               <%end%>
 
             <a href="/post/<%=post.id%>">

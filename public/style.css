@@ -209,7 +209,7 @@ img {
 }
 
 .grid-item {
-  width: 35%;
+  width: 30%;
   float: left;
 }
 
@@ -243,23 +243,13 @@ img {
   float: left;
 }
 
-/* 2 columns */
-
-/* .grid-item-post-width2 {
-  width: 45%
-} */
-
-/* .grid-item-dash-width2 {
-  width: 30%;
-} */
-
 .grid-item--width2 {
   width: 22%;
 }
 
-.grid-item--width3 {
+/* .grid-item--width3 {
   width: 37%;
-}
+} */
 
 /* posts */
 

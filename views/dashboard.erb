@@ -4,7 +4,11 @@
   <div class="row my-5">
     <div class="col-lg-10 ">
       <h1 class="xlg-black">
+        <% if @user.posts.empty? %>
+        Welcome, start sharing what interests you.
+        <% else %>
         Welcome back, here are your latest posts:
+        <% end %>
       </h1>
     </div>
     <div class="col-lg-2">
