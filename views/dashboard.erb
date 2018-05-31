@@ -1,34 +1,49 @@
-<h1 class="mt-5">Hello, Here are your posts
-</h1>
-<h2>
-  <a href="/create">Create a Post</a>
-</h2>
+<div class="parallax margin-top fade-in display-none"><%=@user.f_name.downcase%></div>
 
-<div class="parallax fade-in display-none"><%=@user.f_name.downcase%></div>
-
-<div class="grid-dash">
-  <% @user.posts.reverse_each do |post| %>
-    <% if post.id.to_i % 2 == 0 %>
-      <div class="grid-item-dash">
-    <% else %>
-      <div class="grid-item-dash grid-item-dash-width2">
-    <% end %>
-
-    <div class="contain-edit">
-          <img src="<%=post.img%>" alt="">
-          <div class="edit"><a href="/edit/<%=post.id%>"><i class="fa fa-pencil fa-lg"></i></a></div>
-          <div class="trash"><a href="/delete/<%=post.id%>"><i class="fa fa-trash fa-lg"></i></a></div>
+<div class="container">
+  <div class="row my-5">
+    <div class="col-lg-10 ">
+      <h1 class="xlg-black">
+        Welcome back, here are your latest posts:
+      </h1>
     </div>
-          <%t = post.updated_at%>
-            <%m = t.strftime("%m")%>
-              <%d = t.strftime("%d")%>
-                <span class="sm-gray"><%=m%>.<%=d%>
-                  <%= post.tag%>
-                  <%= @user.f_name.downcase%>
-                  <%= @user.l_name.downcase%></span><br>
-                <span class="md-black"><%=post.title%></span>
-              </div>
-  <% end %>
-     </div>
+    <div class="col-lg-2">
+      <a href="/create" class="link-btn">
+        <div class="d-flex justify-content-center align-items-center">
+          Create a Post
+        </div>
+      </a>
+    </div>
+  </div>
 
-<div class="parallax fade-in display-none"><%=@user.f_name.downcase%></div>
+<div class="">
+  <div class="grid-dash">
+   <% @user.posts.reverse_each do |post| %>
+     <% if post.id.to_i % 2 == 0 %>
+        <div class="grid-item-dash">
+      <% else %>
+        <div class="grid-item-dash grid-item-dash-width2">
+      <% end %>
+      <div class="contain-edit">
+            <img src="<%=post.img%>" alt="">
+            <div class="edit"><a href="/edit/<%=post.id%>"><i class="fa fa-pencil fa-lg"></i></a></div>
+            <div class="trash"><a href="/delete/<%=post.id%>"><i class="fa fa-trash fa-lg"></i></a></div>
+      </div>
+            <%t = post.updated_at%>
+              <%m = t.strftime("%m")%>
+                <%d = t.strftime("%d")%>
+                  <span class="sm-gray"><%=m%>.<%=d%>
+                    <%= post.tag%>
+                    <%= @user.f_name.downcase%>
+                    <%= @user.l_name.downcase%>
+                  </span><br>
+                  <span class="md-black"><%=post.title%></span>
+
+                </div>
+         <% end %>
+       </div>
+
+</div>
+
+
+</div>

@@ -7,6 +7,7 @@ enable :sessions
 
 get ('/') do
   @posts = Post.all
+  @newest_posts = @posts.reverse
   erb(:index)
 end
 

@@ -1,53 +1,68 @@
 <!-- carousel -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  <ol class="carousel-indicators carousel-indicators-numbers">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">1</li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1">2</li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2">3</li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3">4</li>
   </ol>
   <!-- carousel of latest posts  -->
   <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img class="d-block position-left img-fluid" src="images/article-1.png" alt="First slide">
-      <div class="hero-text-container">
-        <div class="hero-text">
-          Advanced Reproductive Technology is Here. But Who Decides Who Gets Access?
-        </div>
-      </div>
 
-    </div>
-    <div class="carousel-item">
-      <img class="d-block position-left img-fluid" src="images/article-2.png" alt="Second slide">
+    <div class="carousel-item active">
+      <img class="d-block position-left img-fluid" src="<%=@newest_posts[0].img%>" alt="First slide">
       <div class="hero-text-container">
         <div class="hero-text">
-          An exploration of Tycho’s New Album & His Design as ISO500
+          <%=@newest_posts[0].title%>
         </div>
       </div>
     </div>
+
     <div class="carousel-item">
-      <img class="d-block position-left img-fluid" src="images/article-3.png" alt="Third slide">
+      <img class="d-block position-left img-fluid" src="<%=@newest_posts[1].img%>" alt="Second slide">
       <div class="hero-text-container">
         <div class="hero-text">
-          Best music videos of 2018 so far
+            <%=@newest_posts[1].title%>
         </div>
       </div>
     </div>
+
+    <div class="carousel-item">
+      <img class="d-block position-left img-fluid" src="<%=@newest_posts[2].img%>" alt="Third slide">
+      <div class="hero-text-container">
+        <div class="hero-text">
+          <%=@newest_posts[2].title%>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block position-left img-fluid" src="<%=@newest_posts[3].img%>" alt="Forth slide">
+      <div class="hero-text-container">
+        <div class="hero-text">
+          <%=@newest_posts[3].title%>
+        </div>
+      </div>
+    </div>
+
   </div>
+
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="carousel-control-prev-icon" ></span>
   </a>
+
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="carousel-control-next-icon" ></span>
   </a>
+
 </div>
 
 <div class="parallax fade-in display-none">Latest</div>
-
 <!-- main content  -->
 
 <div class="grid">
-  <% @posts.reverse_each do |post| %>
+  <% @newest_posts.each do |post| %>
     <% author = post.user %>
       <% if post.id.to_i % 3 == 0 %>
         <div class="grid-item">
@@ -57,7 +72,7 @@
               <div class="grid-item grid-item--width3">
             <%end%>
 
-          <a href="/post/<%=post.id.to_i%>">
+          <a href="/post/<%=post.id%>">
             <% if post.tag == 'science' %>
               <div class="contain-overlay overlay pink">
             <% elsif post.tag == 'music' %>
@@ -78,8 +93,5 @@
                       <%= author.l_name.downcase%></span><br>
                     <span class="md-black"><%=post.title%></span>
                   </div>
-            
-              <% end %>
+      <% end %>
             </div>
-
-  <div class="parallax fade-in display-none">Latest</div>

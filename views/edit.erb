@@ -1,35 +1,35 @@
-<form action="/edit/post/<%=@id%>" method="POST" enctype="multipart/form-data">
-  <div class="row">
-    <div class="col">
-      <label for="">Title</label>
-      <input type="text" name="title" class="form-control" value="<%=@post.title%>">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <label for="">Content</label>
-      <textarea cols="30" rows="10" name="content" class="form-control"><%=@post.content%></textarea>
-    </div>
-  </div>
+<div class="container">
+  <div class="col-lg-12">
+    <form class="mt-5" action="/edit/post/<%=@id%>" method="POST" enctype="multipart/form-data">
+      <div class="row m-5">
+        <div class="col-lg-12">
 
-  <div class="row">
-    <div class="col">
-      <input type="radio" name="tag" value="science">science<br>
-      <input type="radio" name="tag" value="music">music<br>
-      <input type="radio" name="tag" value="viral">viral
-    </div>
-  </div>
+          <label class="md-black" for="">Title</label>
+          <input type="text" name="title" class="form-control" value="<%=@post.title%>">
+          <label class="md-black mt-4">Content</label>
+          <textarea cols="30" rows="10" name="content" class="form-control mt-2"><%=@post.content%></textarea>
 
-  <div class="row">
-    <div class="col">
-      <input type="file" name="file">
+          <div class="">
+            <label class="radio-inline m-3 pink">
+              <input class="mx-auto" type="radio" name="tag" value="science">science
+            </label>
+            <label class="radio-inline m-3 blue">
+              <input class="radio-inline" type="radio" name="tag" value="music">music
+            </label>
+            <label class="radio-inline m-3 yellow">
+              <input class="radio-inline" type="radio" name="tag" value="viral">viral
+            </label>
 
-    </div>
-  </div>
+          </div>
 
-  <div class="row">
-    <div class="col">
-      <input type="submit" class="btn btn-primary">
-    </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <input type="file" name="file">
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center mb-5">
+            <input type="submit">
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
-</form>

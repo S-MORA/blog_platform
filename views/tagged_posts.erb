@@ -1,34 +1,46 @@
-<div class="parallax fade-in display-none"><%=@view_manager.type%></div>
+<%if @view_manager.type == 'science' %>
+<div class="parallax margin-top fade-in display-none pink"><%=@view_manager.type%></div>
+<% elsif @view_manager.type == 'music' %>
+ <div class="parallax margin-top fade-in display-none blue"><%=@view_manager.type%></div>
+ <% else %>
+ <div class="parallax margin-top fade-in display-none yellow"><%=@view_manager.type%></div>
+ <% end %>
+<div class="container">
+  <div class="mt-5">
+    <div class="grid-posts">
+      <% @view_manager.posts.reverse_each do |post| %>
+        <% if post.id.to_i % 2 == 0 %>
+          <div class="grid-item-post">
+        <% else %>
+          <div class="grid-item-post grid-item-post-width2">
+        <% end %>
+      <a href="post/<%=post.id%>">
+        <% if post.tag == 'science' %>
+          <div class="contain-overlay overlay pink">
+        <% elsif post.tag == 'music' %>
+           <div class="contain-overlay overlay blue">
+        <% else %>
+           <div class="contain-overlay overlay yellow">
+        <%end%>
+              <img src="<%=post.img%>" alt=""><br>
+          </div>
+          </a>
+              <%t = post.updated_at%>
+                <%m = t.strftime("%m")%>
+                  <%d = t.strftime("%d")%>
+                    <span class="sm-gray"><%=m%>.<%=d%>
+                      <%= post.tag%>
+                      <%= post.user.f_name.downcase%>
+                      <%= post.user.l_name.downcase%></span><br>
+                    <span class="md-black"><%=post.title%></span>
+                  </div>
+          <% end %>
+         </div>
 
-<div class="grid-dash">
-  <% @view_manager.posts.reverse_each do |post| %>
-    <% if post.id.to_i % 2 == 0 %>
-      <div class="grid-item-dash">
-    <% else %>
-      <div class="grid-item-dash grid-item-dash-width2">
-    <% end %>
-  <a href="/post">
-    <% if post.tag == 'science' %>
-      <div class="contain-overlay overlay pink">
-    <% elsif post.tag == 'music' %>
-       <div class="contain-overlay overlay blue">
-    <% else %>
-       <div class="contain-overlay overlay yellow">
-    <%end%>
-          <img src="<%=post.img%>" alt=""><br>
-      </div>
-      </a>
-          <%t = post.updated_at%>
-            <%m = t.strftime("%m")%>
-              <%d = t.strftime("%d")%>
-                <span class="sm-gray"><%=m%>.<%=d%>
-                  <%= post.tag%>
-                  <%= post.user.f_name.downcase%>
-                  <%= post.user.l_name.downcase%></span><br>
-                <span class="md-black"><%=post.title%></span>
-              </div>
+    </div>
+  </div>
 
-     </div>
-     <% end %>
+
+
+
 </div>
-<div class="parallax fade-in display-none"><%=@view_manager.type%></div>

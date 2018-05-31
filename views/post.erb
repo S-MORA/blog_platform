@@ -1,24 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
 
-<h1 class="md-black"><%=@post.title%></h1>
-        <br>
-<a href="/post/<%=@id%>">
-<% if @post.tag == 'science' %>
-  <div class="contain-overlay overlay pink">
-<% elsif @post.tag == 'music' %>
-  <div class="contain-overlay overlay blue">
-<% else %>
-   <div class="contain-overlay overlay yellow">
-<%end%>
-    <img src="/<%=@post.img%>" alt=""><br>
-  </div>
-  </a>
-  <%t = @post.updated_at%>
-    <%m = t.strftime("%m")%>
-      <%d = t.strftime("%d")%>
-        <% author = @post.user %>
-          <span class="sm-gray"><%=m%>.<%=d%>
-            <%= @post.tag%>
-            <%= author.f_name.downcase%>
-            <%= author.l_name.downcase%>
-          </span>
-          <p> <%= @post.content%> </p>
+    <div class="col-lg-10">
+      <h1 class="xlg-black m-5"><%=@post.title%></h1>
+      <br>
+    </div>
+
+    <div class="col-lg-12">
+
+      <a href="/post/<%=@id%>">
+        <% if @post.tag == 'science' %>
+          <div class="contain-overlay overlay pink mx-5 mb-3">
+            <% elsif @post.tag == 'music' %>
+              <div class="contain-ovmb-3erlay overlay blue mx-5 mb-3">
+              <% else %>
+                <div class="contain-overlay overlay yellow mx-5 ">
+                <%end%>
+                <img src="/<%=@post.img%>" alt=""><br>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="col-lg-10 mx-5">
+            <%t = @post.updated_at%>
+              <%m = t.strftime("%m")%>
+                <%d = t.strftime("%d")%>
+                  <% author = @post.user %>
+
+                    <div class="col-lg-12">
+                      <span class="md-black"><%=m%>.<%=d%>
+                        -
+                        <%= @post.tag%>
+                        -
+                        <%= author.f_name.downcase%>
+                        <%= author.l_name.downcase%>
+                      </span>
+                    </div>
+
+                    <div class="col-lg-10 col-sm-12">
+                      <p class="lg-black py-4">
+                        <%= @post.content%>
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
