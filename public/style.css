@@ -161,22 +161,28 @@ input[type=search]:focus {
 .position-left {
   position: relative;
   left: 46vw;
-  top: 8vh;
+  top: 5vh;
+}
+
+.bottom-left {
+  bottom: 30vh;
+  left: 8vw;
+  width: 10%
 }
 
 .hero-text-container {
   height: 20vw;
-  width: 40vw;
+  width: 48vw;
+  position: relative;
+  bottom: 300px;
+  left: 35vw;
 }
 
 .hero-text {
   font-family: CMSansSerif-Medium;
-  font-size: 6vh;
+  font-size: 4vw;
   color: #000000;
-  letter-spacing: .03vw;
-  position: relative;
-  bottom: 35vh;
-  left: 28vw;
+  letter-spacing: .02vw;
 }
 
 hr {
@@ -246,20 +252,16 @@ img {
   width: 22%;
 }
 
-/* .grid-item--width3 {
-  width: 37%;
-} */
-
 /* posts */
 
 .sm-gray {
-  font-size: 16px;
+  font-size: 1vw;
   color: #565656;
   letter-spacing: 1px;
 }
 
 .md-black {
-  font-size: 22px;
+  font-size: 1.8vw;
   color: #000000;
   letter-spacing: 1px;
 }
@@ -358,21 +360,6 @@ img {
 }
 
 /* footer */
-
-footer {
-  background: #F1F1F1;
-  border-top: 1px solid #979797;
-  height: 8vh;
-  width: 100%;
-  /* position: absolute;
-  bottom: 0.1; */
-}
-
-.footer-text {
-  font-size: 16px;
-  color: #565656;
-  letter-spacing: 1.5px;
-}
 
 .carousel-indicators-numbers li {
   text-indent: 0;

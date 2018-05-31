@@ -22,12 +22,13 @@ post ('/signup') do
       return redirect '/login'
     end
 
-  user = User.create(
+  @user = User.create(
     f_name: params[:f_name],
     l_name: params[:l_name],
     email: params[:email],
     password: params[:password]
   )
+  @user = user.id
   session[:user_id] = user.id
   redirect '/dashboard'
 end
@@ -38,38 +39,38 @@ end
 
 post('/login') do
 
-	user = User.find_by(email: params[:user_email])
-	if user.nil?
+	@user = User.find_by(email: params[:user_email])
+	if @user.nil?
 		return redirect '/login'
 	end
 
-	unless user.password == params[:password]
+	unless @user.password == params[:password]
 		return redirect '/login'
 	end
 
-	session[:user_id] = user.id
+	session[:user_id] = @user.id
 	redirect '/dashboard'
 end
 
 get ('/logout') do
-  old_user = session[:username]
-  session[:username] = nil
+  old_user = session[:user_id]
+  session[:user_id] = nil
   redirect '/'
 end
 
 get ('/dashboard') do
- user_id = session[:user_id]
- if user_id.nil?
+ @user_id = session[:user_id]
+ if @user_id.nil?
    return redirect '/'
  end
- @user = User.find(user_id)
+ @user = User.find(@user_id)
 
 
   erb(:dashboard)
 end
 
 get ('/create') do
-  user_id = session[:user_id]
+  @user_id = session[:user_id]
   if user_id.nil?
     return redirect '/'
   end
@@ -77,7 +78,7 @@ get ('/create') do
 end
 
 post ('/create') do
-  user_id = session[:user_id]
+  @user_id = session[:user_id]
   if user_id.nil?
     return redirect '/'
   end
@@ -109,7 +110,7 @@ get ('/post/:id') do
 end
 
 get ('/edit/:id') do
-  user_id = session[:user_id]
+  @user_id = session[:user_id]
   if user_id.nil?
     return redirect '/'
   end
@@ -120,7 +121,7 @@ get ('/edit/:id') do
 end
 
 post ('/edit/post/:id') do
-  user_id = session[:user_id]
+  @user_id = session[:user_id]
   if user_id.nil?
     return redirect '/'
   end
@@ -146,7 +147,7 @@ post ('/edit/post/:id') do
 end
 
 get ('/delete/:id') do
-  user_id = session[:user_id]
+  @user_id = session[:user_id]
   if user_id.nil?
     return redirect '/'
   end
@@ -156,8 +157,8 @@ get ('/delete/:id') do
 end
 
 get ('/delete/final/:id') do
-  user_id = session[:user_id]
-  if user_id.nil?
+  @user_id = session[:user_id]
+  if @user_id.nil?
     return redirect '/'
   end
   @id = params[:id].to_i
@@ -167,18 +168,30 @@ get ('/delete/final/:id') do
 end
 
 get ('/music') do
+  @user_id = session[:user_id]
+  if @user_id.nil?
+    return redirect '/music'
+  end
   music_posts = Post.where(tag:'music')
   @view_manager = ViewManager.new('music', music_posts)
   erb(:tagged_posts)
 end
 
 get ('/science') do
+  @user_id = session[:user_id]
+  if @user_id.nil?
+    return redirect '/science'
+  end
   science_posts = Post.where(tag:'science')
   @view_manager = ViewManager.new('science', science_posts)
   erb(:tagged_posts)
 end
 
 get ('/viral') do
+  @user_id = session[:user_id]
+  if @user_id.nil?
+    return redirect '/science'
+  end
   viral_posts = Post.where(tag:'viral')
   @view_manager = ViewManager.new('viral', viral_posts)
   erb(:tagged_posts)
