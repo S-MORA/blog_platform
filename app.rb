@@ -16,12 +16,10 @@ get ('/signup') do
 end
 
 post ('/signup') do
-
   existing_user = User.find_by(email: params[:email])
     if existing_user != nil
       return redirect '/login'
     end
-
   @user = User.create(
     f_name: params[:f_name],
     l_name: params[:l_name],
@@ -38,16 +36,13 @@ get('/login') do
 end
 
 post('/login') do
-
 	@user = User.find_by(email: params[:user_email])
 	if @user.nil?
 		return redirect '/login'
 	end
-
 	unless @user.password == params[:password]
 		return redirect '/login'
 	end
-
 	session[:user_id] = @user.id
 	redirect '/dashboard'
 end
@@ -64,14 +59,12 @@ get ('/dashboard') do
    return redirect '/'
  end
  @user = User.find(@user_id)
-
-
   erb(:dashboard)
 end
 
 get ('/create') do
   @user_id = session[:user_id]
-  if user_id.nil?
+  if @user_id.nil?
     return redirect '/'
   end
   erb(:create)
@@ -122,7 +115,7 @@ end
 
 post ('/edit/post/:id') do
   @user_id = session[:user_id]
-  if user_id.nil?
+  if @user_id.nil?
     return redirect '/'
   end
 
@@ -138,7 +131,7 @@ post ('/edit/post/:id') do
   @post.update(
     title: params[:title],
     content: params[:content],
-    user_id: user_id,
+    user_id: @user_id,
     tag: params[:tag],
     img: "images/#{@filename}",
     updated_at: Time.now
