@@ -7,7 +7,7 @@
 Inspired by fashion editorial websites broken grid & large image style.
 
 ----
-##How To Use
+## How To Use
 Sign up and begin creating posts that will then show up on your dashboard where you can edit them. Latest posts by all users show up on the home page. Visit the tagged posts pages to see the latest posts based on tag.
 
 Enjoy!
