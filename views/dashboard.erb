@@ -29,10 +29,11 @@
         <div class="grid-item-dash m-3">
       <% end %>
       <div class="contain-edit">
-            <img src="<%=post.img%>" alt="">
+            <img src="<%=post.img%>" alt=""><br>
             <div class="edit"><a href="/edit/<%=post.id%>"><i class="fa fa-pencil fa-lg"></i></a></div>
             <div class="trash"><a href="/delete/<%=post.id%>"><i class="fa fa-trash fa-lg"></i></a></div>
       </div>
+      <div class="row my-1">
             <%t = post.updated_at%>
               <%m = t.strftime("%m")%>
                 <%d = t.strftime("%d")%>
@@ -42,7 +43,7 @@
                     <%= @user.l_name.downcase%>
                   </span><br>
                   <span class="md-black"><%=post.title%></span>
-
+</div>
                 </div>
          <% end %>
        </div>

@@ -6,9 +6,10 @@ set :session_secret, ENV['BLOG_SECRET_SESSION']
 enable :sessions
 
 get ('/') do
+  @user_id = session[:user_id]
   @posts = Post.all
   @newest_posts = @posts.reverse
-  erb(:index)
+     erb(:index)
 end
 
 get ('/signup') do
@@ -26,7 +27,6 @@ post ('/signup') do
     email: params[:email],
     password: params[:password]
   )
-  @user = user.id
   session[:user_id] = user.id
   redirect '/dashboard'
 end
@@ -48,8 +48,8 @@ post('/login') do
 end
 
 get ('/logout') do
-  old_user = session[:user_id]
-  session[:user_id] = nil
+  # old_user = session[:user_id]
+session.clear
   redirect '/'
 end
 
@@ -57,6 +57,7 @@ get ('/dashboard') do
  @user_id = session[:user_id]
  if @user_id.nil?
    return redirect '/'
+
  end
  @user = User.find(@user_id)
   erb(:dashboard)
@@ -72,7 +73,7 @@ end
 
 post ('/create') do
   @user_id = session[:user_id]
-  if user_id.nil?
+  if @user_id.nil?
     return redirect '/'
   end
 
@@ -86,7 +87,7 @@ post ('/create') do
   Post.create(
     title: params[:title],
     content: params[:content],
-    user_id: user_id,
+    user_id: @user_id,
     tag: params[:tag],
     img: "images/#{@filename}",
     created_at: Time.now,
@@ -162,9 +163,6 @@ end
 
 get ('/music') do
   @user_id = session[:user_id]
-  if @user_id.nil?
-    return redirect '/music'
-  end
   music_posts = Post.where(tag:'music')
   @view_manager = ViewManager.new('music', music_posts)
   erb(:tagged_posts)
@@ -172,9 +170,6 @@ end
 
 get ('/science') do
   @user_id = session[:user_id]
-  if @user_id.nil?
-    return redirect '/science'
-  end
   science_posts = Post.where(tag:'science')
   @view_manager = ViewManager.new('science', science_posts)
   erb(:tagged_posts)
@@ -182,9 +177,6 @@ end
 
 get ('/viral') do
   @user_id = session[:user_id]
-  if @user_id.nil?
-    return redirect '/science'
-  end
   viral_posts = Post.where(tag:'viral')
   @view_manager = ViewManager.new('viral', viral_posts)
   erb(:tagged_posts)
