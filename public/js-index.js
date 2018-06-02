@@ -1,15 +1,12 @@
 $(document).ready(function() {
-  console.log("Ready")
   // Background Parallax
   let parralax = $(".parallax");
   $(window).scroll(function() {
     let scroll = $(window).scrollTop();
     if (scroll >= 180) {
       parralax.removeClass('display-none')
-      console.log("Removed")
     } else {
       parralax.addClass("display-none")
-      console.log("added")
     }
   });
   // search toggle
@@ -18,8 +15,6 @@ $(document).ready(function() {
     $(".icon-container").toggleClass('display-none');
     $("#ml").toggleClass('ml-auto');
   })
-
-
 
   //masonry
   $('.grid').masonry({
@@ -41,6 +36,5 @@ $(document).ready(function() {
     percentPosition: true,
 
   });
-
 
 });
