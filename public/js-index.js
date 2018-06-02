@@ -24,23 +24,22 @@ $(document).ready(function() {
   //masonry
   $('.grid').masonry({
     itemSelector: '.grid-item',
-    columnWidth: 90,
+    columnWidth: 4,
     percentPosition: true,
-    isFitWidth: true
   });
 
   $('.grid-dash').masonry({
     itemSelector: '.grid-item-dash',
-    columnWidth: 120,
+    columnWidth: 185,
     percentPosition: true,
-    isFitWidth: true
+
   });
 
   $('.grid-posts').masonry({
     itemSelector: '.grid-item-post',
-    columnWidth: 99,
+    columnWidth: 41,
     percentPosition: true,
-    isFitWidth: true
+
   });
 
 

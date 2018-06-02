@@ -196,8 +196,6 @@ hr {
 img {
   max-width: 100%;
   max-height: 100%;
-  opacity: 1;
-  transition: .5s ease;
 }
 
 .grid {

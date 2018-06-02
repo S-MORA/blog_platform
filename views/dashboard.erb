@@ -23,11 +23,7 @@
 <div class="">
   <div class="grid-dash">
    <% @user.posts.reverse_each do |post| %>
-     <% if post.id.to_i % 2 != 1 %>
-        <div class="grid-item-dash m-3 ml-5">
-      <% else %>
-        <div class="grid-item-dash m-3">
-      <% end %>
+    <div class="grid-item-dash">
       <div class="contain-edit">
             <img src="<%=post.img%>" alt="">
             <div class="edit"><a href="/edit/<%=post.id%>"><i class="fa fa-pencil fa-lg"></i></a></div>
