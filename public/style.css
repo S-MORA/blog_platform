@@ -202,16 +202,11 @@ img {
 
 .grid {
   max-width: 100%;
+  width: 100% !important;
 }
 
 .left {
   left: 8vw;
-}
-
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .grid-item {
@@ -220,10 +215,10 @@ img {
 }
 
 .grid-dash {
-  max-width: 100%;
+  width: 100% !important;
 }
 
-.grid-dash:after {
+.grid-dash:after, .grid-posts:after, .grid:after {
   content: '';
   display: block;
   clear: both;
@@ -235,22 +230,12 @@ img {
 }
 
 .grid-posts {
-  max-width: 100%;
-}
-
-.grid-posts:after {
-  content: '';
-  display: block;
-  clear: both;
+  width: 100% !important;
 }
 
 .grid-item-post {
-  width: 40.5%;
+  width: 44.5%;
   float: left;
-}
-
-.grid-item--width2 {
-  width: 22%;
 }
 
 /* posts */
@@ -259,12 +244,14 @@ img {
   font-size: 1vw;
   color: #565656;
   letter-spacing: 1px;
+  display: block
 }
 
 .md-black {
   font-size: 1.8vw;
   color: #000000;
   letter-spacing: 1px;
+  display: block
 }
 
 .lg-black {
@@ -281,12 +268,16 @@ img {
 
 /* overlay effect */
 
-/* .contain-overlay {
+.contain-overlay {
+  display: inline-block;
   position: relative;
-} */
+}
 
 .overlay {
-  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0
 }
 
 .overlay:after {

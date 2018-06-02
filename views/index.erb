@@ -1,5 +1,4 @@
 <!-- carousel -->
-
 <div style="width: 100%; height:80%" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators carousel-indicators-numbers">
     <li data-target="#carouselIndicators" data-slide-to="0" class="active">
@@ -21,7 +20,6 @@
   </ol>
   <!-- carousel of latest posts  -->
   <div class="carousel-inner" role="listbox">
-
     <div class="carousel-item active">
       <img class="d-block position-left img-fluid" style="height:400px" src="<%=@newest_posts[0].img%>" alt="First slide">
       <div class="hero-text-container">
@@ -55,7 +53,6 @@
            </div>
           </a>
       </div>
-
     </div>
 
     <div class="carousel-item">
@@ -63,7 +60,6 @@
       <div class="hero-text-container">
         <div class="hero-text">
           <%=@newest_posts[2].title%>
-
         </div>
       </div>
 
@@ -74,7 +70,6 @@
            </div>
           </a>
       </div>
-
     </div>
 
     <div class="carousel-item">
@@ -91,7 +86,6 @@
            </div>
           </a>
       </div>
-
     </div>
 
   </div>
@@ -109,40 +103,33 @@
 <div class="parallax fade-in display-none">Latest</div>
 <!-- main content  -->
 <div class="container-fluid">
-<div class="my-5">
+ <div class="my-5">
   <div class="grid">
     <% @newest_posts.each do |post| %>
       <% author = post.user %>
-        <% if post.id.to_i.even?  %>
-          <div class="grid-item m-2 ml-5">
-            <% else %>
-               <div class="grid-item grid-item--width2 m-2">
-              <%end%>
-
+          <div class="grid-item m-3">
             <a href="/post/<%=post.id%>">
-              <% if post.tag == 'science' %>
-                <div class="contain-overlay overlay pink">
-              <% elsif post.tag == 'music' %>
-                 <div class="contain-overlay overlay blue">
-              <% else %>
-                 <div class="contain-overlay overlay yellow">
-              <%end%>
-                   <img src="<%=post.img%>" alt=""><br>
-                </div>
-             </a>
-
-                <%t = post.updated_at%>
-                  <%m = t.strftime("%m")%>
-                    <%d = t.strftime("%d")%>
-                      <span class="sm-gray"><%=m%>.<%=d%>
-                        -
-                        <%= post.tag%>
-                        -
-                        <%= author.f_name.downcase%>
-                        <%= author.l_name.downcase%></span><br>
-                      <span class="md-black"><%=post.title%></span>
-                    </div>
-        <% end %>
+              <div class="contain-overlay">
+                  <img src="<%=post.img%>" alt="">
+                  <% if post.tag == 'science' %>
+                  <div class="overlay position-absolute pink"> </div>
+                  <% elsif post.tag == 'music' %>
+                  <div class="overlay position-absolute blue"> </div>
+                  <% else %>
+                  <div class="overlay position-absolute blue"> </div>
+                  <%end%>
               </div>
-</div>
+          </a>
+                <%t = post.updated_at%>
+                <%m = t.strftime("%m")%>
+                <%d = t.strftime("%d")%>
+              <span class="sm-gray">
+              <%=m%>.<%=d%> - <%= post.tag%> -
+              <%= author.f_name.downcase%>
+              <%= author.l_name.downcase%></span>
+              <span class="md-black"><%=post.title%></span>
+          </div>
+        <% end %>
+        </div>
+    </div>
 </div>

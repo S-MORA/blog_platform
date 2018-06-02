@@ -7,20 +7,21 @@
     </div>
 
     <div class="col-lg-12">
+        <a href="/post/<%=@id%>">
+            <div class="contain-overlay mx-5 mb-3">
+               <img src="/<%=@post.img%>" alt=""><br>
+                <% if @post.tag == 'science' %>
+                <div class="overlay position-absolute pink"> </div>
+                <% elsif @post.tag == 'music' %>
+                <div class="overlay position-absolute blue"> </div>
+                <% else %>
+                <div class="overlay position-absolute blue"> </div>
+                  <%end%>
+            </div>
+        </a>
 
-      <a href="/post/<%=@id%>">
-        <% if @post.tag == 'science' %>
-          <div class="contain-overlay overlay pink mx-5 mb-3">
-            <% elsif @post.tag == 'music' %>
-              <div class="contain-overlay overlay blue mx-5 mb-3">
-              <% else %>
-                <div class="contain-overlay overlay yellow mx-5 ">
-                <%end%>
-                <img src="/<%=@post.img%>" alt=""><br>
-              </div>
+      </div>
 
-            </a>
-          </div>
 
           <div class="col-lg-10 mx-5">
             <%t = @post.updated_at%>

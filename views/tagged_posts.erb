@@ -1,41 +1,34 @@
-<%if @view_manager.type == 'science' %>
+<% if @view_manager.type == 'science' %>
 <div class="parallax margin-top fade-in display-none pink"><%=@view_manager.type%></div>
 <% elsif @view_manager.type == 'music' %>
  <div class="parallax margin-top fade-in display-none blue"><%=@view_manager.type%></div>
- <% else %>
+<% else %>
  <div class="parallax margin-top fade-in display-none yellow"><%=@view_manager.type%></div>
- <% end %>
+<% end %>
 <div class="container-fluid">
-  <div class="my-5">
-
+  <div class="m-5">
     <div class="grid-posts">
       <% @view_manager.posts.reverse_each do |post| %>
-        <% if post.id.to_i % 2 != 1 %>
-          <div class="grid-item-post m-3 ml-5">
-        <% else %>
-          <div class="grid-item-post m-3">
-        <% end %>
-      <a href="post/<%=post.id%>">
-        <% if post.tag == 'science' %>
-          <div class="overlay pink">
-        <% elsif post.tag == 'music' %>
-           <div class="overlay blue">
-        <% else %>
-           <div class="overlay yellow">
-        <%end%>
-
-          <img src="<%=post.img%>" alt=""><br>
-
-
-          </div>
-          </a>
+        <div class="grid-item-post m-4">
+           <a href="/post/<%=@id%>">
+            <div class="contain-overlay">
+               <img src="/<%=post.img%>" alt="">
+                <% if post.tag == 'science' %>
+                <div class="overlay position-absolute pink"> </div>
+                <% elsif post.tag == 'music' %>
+                <div class="overlay position-absolute blue"> </div>
+                <% else %>
+                <div class="overlay position-absolute yellow"> </div>
+                  <%end%>
+            </div>
+        </a>
               <%t = post.updated_at%>
                 <%m = t.strftime("%m")%>
                   <%d = t.strftime("%d")%>
                     <span class="sm-gray"><%=m%>.<%=d%>
                       <%= post.tag%>
                       <%= post.user.f_name.downcase%>
-                      <%= post.user.l_name.downcase%></span><br>
+                      <%= post.user.l_name.downcase%></span>
                     <span class="md-black"><%=post.title%></span>
                   </div>
           <% end %>
