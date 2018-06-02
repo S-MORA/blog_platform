@@ -1,0 +1,47 @@
+<div class="parallax margin-top fade-in display-none">results</div>
+
+<div class="container">
+  <div class="row my-5">
+    <div class="col-lg-12">
+      <h1 class="lg-black">
+        <% if @search.empty? %>
+        Please enter a valid search
+        <% else %>
+        Results for <%=@search.downcase%>
+        <% end %>
+      </h1>
+    </div>
+
+    <div class="container-fluid">
+      <div class="m-5">
+        <div class="grid-posts">
+          <% @posts.reverse_each do |post| %>
+            <div class="grid-item-post m-4">
+               <a href="/post/<%=@id%>">
+                <div class="contain-overlay">
+                   <img src="/<%=post.img%>" alt="">
+                    <% if post.tag == 'science' %>
+                    <div class="overlay position-absolute pink"> </div>
+                    <% elsif post.tag == 'music' %>
+                    <div class="overlay position-absolute blue"> </div>
+                    <% else %>
+                    <div class="overlay position-absolute yellow"> </div>
+                      <%end%>
+                </div>
+            </a>
+                  <%t = post.updated_at%>
+                    <%m = t.strftime("%m")%>
+                      <%d = t.strftime("%d")%>
+                        <span class="sm-gray"><%=m%>.<%=d%>
+                          <%= post.tag%>
+                          <%= post.user.f_name.downcase%>
+                          <%= post.user.l_name.downcase%></span>
+                        <span class="md-black"><%=post.title%></span>
+                      </div>
+              <% end %>
+             </div>
+
+        </div>
+      </div>
+
+    </div>

@@ -181,3 +181,10 @@ get ('/viral') do
   @view_manager = ViewManager.new('viral', viral_posts)
   erb(:tagged_posts)
 end
+
+get ('/search') do
+@user_id = session[:user_id]
+ @search = params[:search]
+ @posts = Post.where('lower(title) LIKE ?', '%' + @search.downcase + '%')
+ erb(:search)
+end
