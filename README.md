@@ -1,5 +1,5 @@
 # Blog Platform
-#### A fullstack blog website that enables someone to sign up for an account and create relevant posts on related to music, science or viral topics.
+#### A fullstack blog website that enables a user to sign up for an account and create posts related to music, science or viral topics.
 
 ----
 ## Motivation & Inspiration
