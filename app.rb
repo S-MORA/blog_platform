@@ -105,7 +105,7 @@ end
 
 get ('/edit/:id') do
   @user_id = session[:user_id]
-  if user_id.nil?
+  if @user_id.nil?
     return redirect '/'
   end
 
