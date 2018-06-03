@@ -10,7 +10,7 @@
     <div class="grid-posts">
       <% @view_manager.posts.reverse_each do |post| %>
         <div class="grid-item-post m-4">
-           <a href="/post/<%=@id%>">
+           <a href="/post/<%=post.id%>">
             <div class="contain-overlay">
                <img src="/<%=post.img%>" alt="">
                 <% if post.tag == 'science' %>
