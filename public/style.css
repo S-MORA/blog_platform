@@ -167,8 +167,8 @@ input[type=search]:focus {
 }
 
 .bottom-left {
-  bottom: 30vh;
-  left: 8vw;
+  bottom: 34vh;
+  left: 16vw;
   width: 10%
 }
 
@@ -247,7 +247,7 @@ img {
 }
 
 .md-black {
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   color: #000000;
   letter-spacing: 1px;
   display: block
