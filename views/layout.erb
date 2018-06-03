@@ -43,14 +43,14 @@
             </a>
         </li>
 
-        <li class="nav-item ml-4">
+        <li class="nav-item">
         <% if  @user_id.nil? %>
           <a style="color: black" class="nav-link" href="/login">log in</a>
         <% else %>
         <a style="color: black" class="nav-link" href="/logout">log out</a>
         <% end %>
         </li>
-        <li class="nav-item ml-4">
+        <li class="nav-item">
         <% if  @user_id.nil? %>
           <a style="color:black" class="nav-link" href="/signup">sign up</a>
           <% else %>
