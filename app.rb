@@ -1,6 +1,6 @@
 require 'sinatra'
 require './models'
-require './View_manager'
+require './view_manager'
 
 set :session_secret, ENV['BLOG_SECRET_SESSION']
 enable :sessions
