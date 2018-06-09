@@ -2,9 +2,10 @@
 #### A fullstack blog website that enables a user to sign up for an account and create posts related to music, science or viral topics.
 
 ----
-## Motivation & Inspiration
+## Environment
 
-Inspired by fashion editorial websites broken grid & large image style.
+Sinatra used to handle requests.
+Masonary.js and Bootstrap for user interface.
 
 ----
 ## How To Use
