@@ -27,7 +27,7 @@ post ('/signup') do
     email: params[:email],
     password: params[:password]
   )
-  session[:user_id] = user.id
+  session[:user_id] = @user.id
   redirect '/dashboard'
 end
 
@@ -48,7 +48,6 @@ post('/login') do
 end
 
 get ('/logout') do
-  # old_user = session[:user_id]
 session.clear
   redirect '/'
 end
