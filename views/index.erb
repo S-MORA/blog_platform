@@ -23,8 +23,10 @@
   </li>
   </ol>
   <!-- carousel of latest posts  -->
+<% if @newest_posts.length > 0 %>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
+
       <img class="d-block position-left img-fluid" style="height:400px" src="<%=@newest_posts[0].img%>" alt="First slide">
       <div class="hero-text-container">
         <div class="hero-text">
@@ -137,3 +139,4 @@
         </div>
     </div>
 </div>
+<% end %> 
