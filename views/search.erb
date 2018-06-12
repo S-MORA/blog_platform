@@ -30,18 +30,16 @@
                 </div>
             </a>
                   <%t = post.updated_at%>
-                    <%m = t.strftime("%m")%>
-                      <%d = t.strftime("%d")%>
-                        <span class="sm-gray"><%=m%>.<%=d%>
-                          <%= post.tag%>
-                          <%= post.user.f_name.downcase%>
-                          <%= post.user.l_name.downcase%></span>
-                        <span class="md-black"><%=post.title%></span>
-                      </div>
-              <% end %>
-             </div>
-
+                  <%m = t.strftime("%m")%>
+                  <%d = t.strftime("%d")%>
+                <span class="sm-gray"><%=m%>.<%=d%> -
+                      <%= post.tag%> -
+                      <%= post.user.f_name.downcase%>
+                      <%= post.user.l_name.downcase%></span>
+                <span class="md-black"><%=post.title%></span>
+            </div>
+          <% end %>
         </div>
       </div>
-
     </div>
+  </div>
