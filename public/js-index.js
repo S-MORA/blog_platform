@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
   //masonry
-  $('.grid').imagesLoaded().always(function() {
+  $('.grid').imagesLoaded().done(function() {
     $('.grid').masonry({
       itemSelector: '.grid-item',
       columnWidth: 4,
@@ -19,7 +19,7 @@ $(document).ready(function() {
     });
   })
 
-  $('.grid-dash').imagesLoaded().always(function() {
+  $('.grid-dash').imagesLoaded().done(function() {
     $('.grid-dash').masonry({
       itemSelector: '.grid-item-dash',
       columnWidth: 185,
@@ -28,7 +28,7 @@ $(document).ready(function() {
     });
   })
 
-  $('.grid-posts').imagesLoaded().always(function() {
+  $('.grid-posts').imagesLoaded().done(function() {
     $('.grid-posts').masonry({
       itemSelector: '.grid-item-post',
       columnWidth: 41,
