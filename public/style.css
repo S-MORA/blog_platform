@@ -13,7 +13,7 @@ body, html {
 }
 
 .parallax {
-  font-size: 22vh;
+  font-size: 10em;
   height: 100%;
   position: fixed;
   margin-left: 32.5vw;
