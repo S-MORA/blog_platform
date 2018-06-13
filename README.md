@@ -15,6 +15,7 @@ PostgreSQL/Active Record
 
 
 Designed User Interface in Sketch
+![alt text](https://raw.githubusercontent.com/S-MORA/blog_platform/master/public/images/blog_screenshot.png)
 
 ----
 ## How To Use
