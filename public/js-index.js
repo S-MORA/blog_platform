@@ -14,7 +14,7 @@ $(document).ready(function() {
   $('.grid').imagesLoaded().done(function() {
     $('.grid').masonry({
       itemSelector: '.grid-item',
-      columnWidth: 4,
+      columnWidth: 52.2,
       percentPosition: true,
     });
   })
