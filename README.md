@@ -8,10 +8,10 @@ Deployed: https://localhostblog.herokuapp.com/
 
 Ruby  
 Javascript   
-Masonary.js  
-Bootstrap
-Sinatra as the backend framework  
-PostgreSQL/Active Record  
+Masonary.js for placing posts in optimal position based on available vertical space.    
+Bootstrap for the carousel  
+Sinatra as the backend framework to allow CRUD for posts/images  
+PostgreSQL/Active Record to store posts/images 
 
 
 Designed User Interface in Sketch
@@ -20,6 +20,8 @@ Designed User Interface in Sketch
 ----
 ## How To Use
 Users can see latest posts on the home page or tag specific posts without logging in.
+
+If you hover over a post, the posts overlay color is determined by its tag.
 
 Demo Login:
 ----
