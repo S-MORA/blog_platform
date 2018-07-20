@@ -182,7 +182,7 @@ get ('/viral') do
 end
 
 get ('/search') do
-@user_id = session[:user_id]
+ @user_id = session[:user_id]
  @search = params[:search]
  @posts = Post.where('lower(title) LIKE ?', '%' + @search.downcase + '%')
  erb(:search)

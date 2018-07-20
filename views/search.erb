@@ -17,18 +17,18 @@
         <div class="grid-posts">
           <% @posts.reverse_each do |post| %>
             <div class="grid-item-post m-4">
-               <a href="/post/<%=@id%>">
+               <a href="/post/<%=post.id%>">
                 <div class="contain-overlay">
                    <img src="/<%=post.img%>" alt="">
                     <% if post.tag == 'science' %>
                     <div class="overlay position-absolute pink"> </div>
-                    <% elsif post.tag == 'music' %>
+                     <% elsif post.tag == 'music' %>
                     <div class="overlay position-absolute blue"> </div>
-                    <% else %>
+                     <% else %>
                     <div class="overlay position-absolute yellow"> </div>
-                      <%end%>
-                </div>
-            </a>
+                    <%end%>
+                 </div>
+               </a>
                   <%t = post.updated_at%>
                   <%m = t.strftime("%m")%>
                   <%d = t.strftime("%d")%>
